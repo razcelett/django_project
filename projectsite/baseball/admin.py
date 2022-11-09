@@ -7,12 +7,12 @@ from .models import Position, Person, Club, Play
 @admin.register(Position)
 class PositionAdmin(admin.ModelAdmin):
     list_display = ("description",)
-    search_field = ("description",)
+    search_fields = ("description",)
 
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
     list_display = ("lastname", "firstname", "height", "weight")
-    search_field = ("lastname", "firstname", "height", "weight")
+    search_fields = ("lastname", "firstname", "height", "weight")
 
 @admin.register(Club)
 class ClubAdmin(admin.ModelAdmin):
