@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin import display
-from .models import Position, Person
+from .models import Position, Person, Club, Play
 
 # Register your models here.
 
@@ -14,5 +14,12 @@ class PersonAdmin(admin.ModelAdmin):
     list_display = ("lastname", "firstname", "height", "weight")
     search_field = ("lastname", "firstname", "height", "weight")
 
+@admin.register(Club)
+class ClubAdmin(admin.ModelAdmin):
+    list_display = ("name","coach",)
+    search_fields = ("name",)
 
+@admin.register(Play)
+class PlayAdmin(admin.ModelAdmin):
+    list_display = ("player","team","string_no","isActive",)
 
