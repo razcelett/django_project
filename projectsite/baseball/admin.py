@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin import display
-from .models import Position, Person, Club, Play
+from .models import Position, Person, Club, Play, Match
 
 # Register your models here.
 
@@ -23,3 +23,6 @@ class ClubAdmin(admin.ModelAdmin):
 class PlayAdmin(admin.ModelAdmin):
     list_display = ("player","team","string_no","isActive",)
 
+@admin.register(Match)
+class MatchAdmin(admin.ModelAdmin):
+    list_display = ("team1","score_t1","team2","score_t2","winner",)
